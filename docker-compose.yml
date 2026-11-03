@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres:16
+    container_name: agroquery-db
+    environment:
+      POSTGRES_USER: agro
+      POSTGRES_PASSWORD: agro
+      POSTGRES_DB: agroquery
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    command: ["postgres", "-c", "shared_buffers=512MB", "-c", "work_mem=64MB"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U agro -d agroquery"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  pgdata:

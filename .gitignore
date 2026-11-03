@@ -1,0 +1,24 @@
+# Secrets
+.env
+
+# Personal planning notes (not part of the public repo)
+AgroQuery_proyecto.md
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Data / caches
+data/raw/
+.cache/
+results/scratch/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
