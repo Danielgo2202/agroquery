@@ -22,3 +22,6 @@ results/scratch/
 Thumbs.db
 .vscode/
 .idea/
+
+# Development smoke runs
+results/*smoke*/
