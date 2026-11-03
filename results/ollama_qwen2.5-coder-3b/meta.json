@@ -1,0 +1,23 @@
+{
+  "run": "ollama_qwen2.5-coder-3b",
+  "provider": "ollama",
+  "small_model": "qwen2.5-coder:3b",
+  "large_model": "qwen2.5-coder:3b",
+  "strategies": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ],
+  "n_questions": 50,
+  "repeat": 1,
+  "prices_as_of": "2026-11",
+  "git_commit": "4d32b78",
+  "started_at": "2026-11-02T20:12:35",
+  "finished_at": "2026-11-02T20:30:18",
+  "completed_items": 200,
+  "planned_items": 200,
+  "fresh_spend_usd": 0.0,
+  "wall_time_s": 1063.9,
+  "stopped_early": null
+}

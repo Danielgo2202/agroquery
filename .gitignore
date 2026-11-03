@@ -25,3 +25,4 @@ Thumbs.db
 
 # Development smoke runs
 results/*smoke*/
+results/*.log

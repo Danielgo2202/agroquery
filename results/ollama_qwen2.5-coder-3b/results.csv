@@ -1,0 +1,201 @@
+run,provider,strategy,question_id,difficulty,repeat,correct,exec_ok,empty_result,attempts,escalated,n_calls,input_tokens,output_tokens,cost_usd,llm_latency_s,sql_latency_s,total_latency_s,cached_calls,models,error
+ollama_qwen2.5-coder-3b,ollama,S1,E01,easy,0,1,1,0,1,0,1,2680,41,0.0,5.471,0.002,5.473,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E01,easy,0,1,1,0,1,0,2,916,76,0.0,11.364,0.003,11.367,2,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E01,easy,0,1,1,0,1,0,1,2680,41,0.0,5.471,0.002,5.473,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E01,easy,0,1,1,0,1,0,1,2680,41,0.0,5.471,0.002,5.473,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E02,easy,0,1,1,0,1,0,1,2676,26,0.0,4.436,0.001,4.438,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E02,easy,0,1,1,0,1,0,2,1032,67,0.0,8.585,0.002,8.587,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E02,easy,0,1,1,0,1,0,1,2676,26,0.0,4.436,0.001,4.438,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E02,easy,0,1,1,0,1,0,1,2676,26,0.0,4.436,0.001,4.438,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E03,easy,0,1,1,0,1,0,1,2678,41,0.0,3.615,0.001,3.616,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E03,easy,0,1,1,0,1,0,2,871,64,0.0,5.771,0.001,5.773,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E03,easy,0,1,1,0,1,0,1,2678,41,0.0,3.615,0.001,3.616,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E03,easy,0,1,1,0,1,0,1,2678,41,0.0,3.615,0.001,3.616,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E04,easy,0,1,1,0,1,0,1,2683,73,0.0,6.162,0.002,6.164,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E04,easy,0,1,1,0,1,0,2,1020,101,0.0,9.666,0.002,9.667,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E04,easy,0,1,1,0,1,0,1,2683,73,0.0,6.162,0.002,6.164,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E04,easy,0,1,1,0,1,0,1,2683,73,0.0,6.162,0.002,6.164,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E05,easy,0,0,1,1,1,0,1,2700,47,0.0,4.61,0.001,4.612,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E05,easy,0,0,1,0,1,0,2,1037,85,0.0,7.292,0.002,7.295,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E05,easy,0,0,1,1,3,0,3,8401,155,0.0,14.858,0.002,14.859,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E05,easy,0,0,1,1,6,1,6,16802,310,0.0,29.716,0.021,29.737,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E06,easy,0,1,1,0,1,0,1,2669,16,0.0,1.475,0.001,1.476,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E06,easy,0,1,1,0,1,0,2,859,47,0.0,4.535,0.002,4.537,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E06,easy,0,1,1,0,1,0,1,2669,16,0.0,1.475,0.002,1.476,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E06,easy,0,1,1,0,1,0,1,2669,16,0.0,1.475,0.001,1.476,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E07,easy,0,1,1,0,1,0,1,2681,118,0.0,10.438,0.001,10.44,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E07,easy,0,0,0,0,1,0,2,1665,224,0.0,23.997,0.013,24.01,2,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column s.value does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,E07,easy,0,1,1,0,1,0,1,2681,118,0.0,10.438,0.001,10.44,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E07,easy,0,1,1,0,1,0,1,2681,118,0.0,10.438,0.001,10.439,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E08,easy,0,0,1,0,1,0,1,2674,54,0.0,4.815,0.001,4.817,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E08,easy,0,0,1,0,1,0,2,1275,86,0.0,10.367,0.002,10.369,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E08,easy,0,0,1,0,1,0,1,2674,54,0.0,4.815,0.002,4.817,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E08,easy,0,0,1,0,1,0,1,2674,54,0.0,4.815,0.001,4.816,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E09,easy,0,1,1,0,1,0,1,2671,16,0.0,1.532,0.001,1.533,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E09,easy,0,0,1,0,1,0,2,771,47,0.0,3.484,0.001,3.485,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E09,easy,0,1,1,0,1,0,1,2671,16,0.0,1.532,0.001,1.533,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E09,easy,0,1,1,0,1,0,1,2671,16,0.0,1.532,0.001,1.533,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E10,easy,0,1,1,0,1,0,1,2678,22,0.0,2.08,0.001,2.081,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E10,easy,0,1,1,0,1,0,2,873,45,0.0,4.589,0.002,4.592,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E10,easy,0,1,1,0,1,0,1,2678,22,0.0,2.08,0.001,2.082,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E10,easy,0,1,1,0,1,0,1,2678,22,0.0,2.08,0.001,2.081,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E11,easy,0,0,0,0,1,0,1,2679,63,0.0,5.61,0.001,5.612,0,qwen2.5-coder:3b,"UndefinedColumn: column ""crop"" does not exist"
+ollama_qwen2.5-coder-3b,ollama,S2,E11,easy,0,1,1,0,1,0,2,1382,159,0.0,16.201,0.002,16.203,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E11,easy,0,0,0,0,3,0,3,8358,189,0.0,17.071,0.002,17.072,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,"UndefinedColumn: column ""crop"" does not exist"
+ollama_qwen2.5-coder-3b,ollama,S4,E11,easy,0,0,0,0,6,1,6,16716,378,0.0,34.142,0.001,34.142,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,"UndefinedColumn: column ""crop"" does not exist"
+ollama_qwen2.5-coder-3b,ollama,S1,E12,easy,0,1,1,0,1,0,1,2676,59,0.0,4.933,0.001,4.935,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E12,easy,0,1,1,0,1,0,2,1081,93,0.0,7.359,0.001,7.36,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E12,easy,0,1,1,0,1,0,1,2676,59,0.0,4.933,0.002,4.935,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E12,easy,0,1,1,0,1,0,1,2676,59,0.0,4.933,0.001,4.934,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E13,easy,0,1,1,0,1,0,1,2687,81,0.0,6.857,0.002,6.86,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E13,easy,0,1,1,0,1,0,2,1028,123,0.0,10.996,0.002,10.998,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E13,easy,0,1,1,0,1,0,1,2687,81,0.0,6.857,0.002,6.859,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E13,easy,0,1,1,0,1,0,1,2687,81,0.0,6.857,0.002,6.859,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E14,easy,0,1,1,0,1,0,1,2695,44,0.0,3.629,0.003,3.632,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E14,easy,0,1,1,0,1,0,2,1044,85,0.0,6.991,0.004,6.995,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E14,easy,0,1,1,0,1,0,1,2695,44,0.0,3.629,0.003,3.632,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E14,easy,0,1,1,0,1,0,1,2695,44,0.0,3.629,0.003,3.631,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E15,easy,0,1,1,0,1,0,1,2684,44,0.0,3.256,0.002,3.257,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E15,easy,0,0,0,0,1,0,2,1284,112,0.0,6.196,0.002,6.198,0,qwen2.5-coder:3b+qwen2.5-coder:3b,"AmbiguousColumn: column reference ""name"" is ambiguous"
+ollama_qwen2.5-coder-3b,ollama,S3,E15,easy,0,1,1,0,1,0,1,2684,44,0.0,3.256,0.001,3.257,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E15,easy,0,1,1,0,1,0,1,2684,44,0.0,3.256,0.001,3.257,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E16,easy,0,0,0,0,1,0,1,2681,56,0.0,3.691,0.001,3.693,0,qwen2.5-coder:3b,UndefinedColumn: column f.area_ha does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,E16,easy,0,0,1,0,1,0,2,1278,130,0.0,6.684,0.001,6.686,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E16,easy,0,1,1,0,2,0,2,5463,112,0.0,7.573,0.001,7.574,1,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E16,easy,0,1,1,0,2,0,2,5463,112,0.0,7.573,0.001,7.574,2,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E17,easy,0,1,1,0,1,0,1,2683,44,0.0,2.856,0.001,2.858,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E17,easy,0,1,1,0,1,0,2,1020,86,0.0,5.275,0.001,5.276,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E17,easy,0,1,1,0,1,0,1,2683,44,0.0,2.856,0.001,2.857,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E17,easy,0,1,1,0,1,0,1,2683,44,0.0,2.856,0.001,2.857,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,E18,easy,0,1,1,0,1,0,1,2678,36,0.0,2.39,0.001,2.391,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,E18,easy,0,1,1,0,1,0,2,848,57,0.0,3.826,0.001,3.827,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,E18,easy,0,1,1,0,1,0,1,2678,36,0.0,2.39,0.001,2.391,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,E18,easy,0,1,1,0,1,0,1,2678,36,0.0,2.39,0.001,2.39,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M01,medium,0,0,0,0,1,0,1,2702,173,0.0,15.012,0.001,15.013,1,qwen2.5-coder:3b,UndefinedColumn: column a.field_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,M01,medium,0,0,0,0,1,0,2,1684,258,0.0,28.003,0.001,28.004,2,qwen2.5-coder:3b+qwen2.5-coder:3b,"UndefinedTable: missing FROM-clause entry for table ""l"""
+ollama_qwen2.5-coder-3b,ollama,S3,M01,medium,0,0,0,0,3,0,3,8757,519,0.0,46.093,0.001,46.093,3,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column a.field_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S4,M01,medium,0,0,0,0,6,1,6,17514,1038,0.0,92.185,0.001,92.186,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column a.field_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S1,M02,medium,0,1,1,0,1,0,1,2685,62,0.0,3.881,0.002,3.883,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M02,medium,0,1,1,0,1,0,2,1115,101,0.0,7.73,0.002,7.731,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M02,medium,0,1,1,0,1,0,1,2685,62,0.0,3.881,0.002,3.883,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M02,medium,0,1,1,0,1,0,1,2685,62,0.0,3.881,0.001,3.882,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M03,medium,0,1,1,0,1,0,1,2700,66,0.0,5.893,0.001,5.894,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M03,medium,0,1,1,0,1,0,2,1105,113,0.0,12.728,0.002,12.73,2,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M03,medium,0,1,1,0,1,0,1,2700,66,0.0,5.893,0.001,5.894,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M03,medium,0,1,1,0,1,0,1,2700,66,0.0,5.893,0.001,5.894,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M04,medium,0,1,1,0,1,0,1,2687,109,0.0,6.614,0.002,6.616,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M04,medium,0,1,1,0,1,0,2,1522,211,0.0,12.608,0.001,12.61,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M04,medium,0,1,1,0,1,0,1,2687,109,0.0,6.614,0.001,6.615,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M04,medium,0,1,1,0,1,0,1,2687,109,0.0,6.614,0.001,6.615,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M05,medium,0,0,0,0,1,0,1,2688,69,0.0,4.436,0.001,4.437,0,qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,M05,medium,0,0,0,0,1,0,2,1992,205,0.0,19.679,0.001,19.68,0,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column s.value does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,M05,medium,0,0,0,0,3,0,3,8403,207,0.0,14.305,0.001,14.307,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column s.value does not exist
+ollama_qwen2.5-coder-3b,ollama,S4,M05,medium,0,0,0,0,6,1,6,16806,414,0.0,28.61,0.001,28.611,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column s.value does not exist
+ollama_qwen2.5-coder-3b,ollama,S1,M06,medium,0,0,0,0,1,0,1,2697,118,0.0,7.934,0.001,7.936,0,qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,M06,medium,0,0,0,0,1,0,2,1856,205,0.0,21.46,0.001,21.461,0,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,M06,medium,0,0,0,0,3,0,3,8577,354,0.0,24.476,0.001,24.477,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S4,M06,medium,0,0,0,0,6,1,6,17154,708,0.0,48.951,0.001,48.952,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S1,M07,medium,0,1,1,0,1,0,1,2704,98,0.0,7.682,0.002,7.684,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M07,medium,0,1,1,0,1,0,2,1062,141,0.0,11.421,0.002,11.423,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M07,medium,0,1,1,0,1,0,1,2704,98,0.0,7.682,0.002,7.684,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M07,medium,0,1,1,0,1,0,1,2704,98,0.0,7.682,0.002,7.683,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M08,medium,0,1,1,0,1,0,1,2695,142,0.0,9.602,0.011,9.613,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M08,medium,0,1,1,0,1,0,2,1394,212,0.0,16.198,0.011,16.209,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M08,medium,0,1,1,0,1,0,1,2695,142,0.0,9.602,0.009,9.612,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M08,medium,0,1,1,0,1,0,1,2695,142,0.0,9.602,0.009,9.611,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M09,medium,0,1,1,0,1,0,1,2689,110,0.0,7.224,0.003,7.227,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M09,medium,0,0,1,0,1,0,2,1109,133,0.0,11.201,0.002,11.202,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M09,medium,0,1,1,0,1,0,1,2689,110,0.0,7.224,0.004,7.227,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M09,medium,0,1,1,0,1,0,1,2689,110,0.0,7.224,0.002,7.226,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M10,medium,0,0,0,0,1,0,1,2706,128,0.0,8.523,0.001,8.525,0,qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,M10,medium,0,0,0,0,1,0,2,1567,211,0.0,16.853,0.001,16.854,0,qwen2.5-coder:3b+qwen2.5-coder:3b,"UndefinedTable: missing FROM-clause entry for table ""regions"""
+ollama_qwen2.5-coder-3b,ollama,S3,M10,medium,0,0,0,0,3,0,3,8634,384,0.0,26.01,0.001,26.011,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S4,M10,medium,0,0,0,0,6,1,6,17268,768,0.0,52.02,0.001,52.02,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S1,M11,medium,0,0,1,0,1,0,1,2681,39,0.0,2.847,0.002,2.849,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M11,medium,0,0,1,0,1,0,2,1088,92,0.0,6.746,0.002,6.747,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M11,medium,0,0,1,0,1,0,1,2681,39,0.0,2.847,0.002,2.848,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M11,medium,0,0,1,0,1,0,1,2681,39,0.0,2.847,0.001,2.848,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M12,medium,0,0,1,0,1,0,1,2687,89,0.0,5.84,0.002,5.843,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M12,medium,0,0,0,0,1,0,2,931,105,0.0,7.352,0.001,7.354,0,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column h.crop does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,M12,medium,0,0,1,0,1,0,1,2687,89,0.0,5.84,0.003,5.843,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M12,medium,0,0,1,0,1,0,1,2687,89,0.0,5.84,0.003,5.843,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M13,medium,0,1,1,0,1,0,1,2706,104,0.0,8.014,0.005,8.02,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M13,medium,0,0,1,0,1,0,2,1361,146,0.0,12.093,0.002,12.095,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M13,medium,0,1,1,0,1,0,1,2706,104,0.0,8.014,0.003,8.018,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M13,medium,0,1,1,0,1,0,1,2706,104,0.0,8.014,0.002,8.017,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M14,medium,0,0,1,0,1,0,1,2692,75,0.0,5.242,0.002,5.245,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M14,medium,0,0,1,1,1,0,2,1023,152,0.0,9.721,0.002,9.722,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M14,medium,0,0,1,0,1,0,1,2692,75,0.0,5.242,0.002,5.245,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M14,medium,0,0,1,0,1,0,1,2692,75,0.0,5.242,0.003,5.245,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M15,medium,0,0,0,0,1,0,1,2693,112,0.0,7.18,0.002,7.182,0,qwen2.5-coder:3b,"UndefinedTable: missing FROM-clause entry for table ""f2"""
+ollama_qwen2.5-coder-3b,ollama,S2,M15,medium,0,0,0,0,1,0,2,1705,231,0.0,18.813,0.001,18.814,0,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column s.value does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,M15,medium,0,0,0,0,3,0,3,8565,348,0.0,22.778,0.001,22.779,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,"UndefinedTable: missing FROM-clause entry for table ""f2"""
+ollama_qwen2.5-coder-3b,ollama,S4,M15,medium,0,0,0,0,6,1,6,17130,696,0.0,45.556,0.001,45.557,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,"UndefinedTable: missing FROM-clause entry for table ""f2"""
+ollama_qwen2.5-coder-3b,ollama,S1,M16,medium,0,1,1,0,1,0,1,2698,86,0.0,5.609,0.002,5.611,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M16,medium,0,1,1,0,1,0,2,1096,129,0.0,8.59,0.002,8.592,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M16,medium,0,1,1,0,1,0,1,2698,86,0.0,5.609,0.002,5.611,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M16,medium,0,1,1,0,1,0,1,2698,86,0.0,5.609,0.003,5.612,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M17,medium,0,0,0,0,1,0,1,2698,90,0.0,6.773,0.001,6.774,0,qwen2.5-coder:3b,UndefinedColumn: column f.area_ha does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,M17,medium,0,0,0,0,1,0,2,1598,190,0.0,17.279,0.002,17.281,0,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.area_ha does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,M17,medium,0,1,1,0,2,0,2,5531,180,0.0,13.068,0.003,13.071,1,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M17,medium,0,1,1,0,2,0,2,5531,180,0.0,13.068,0.003,13.071,2,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,M18,medium,0,0,1,0,1,0,1,2687,73,0.0,4.865,0.003,4.867,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,M18,medium,0,0,1,0,1,0,2,1013,115,0.0,9.738,0.003,9.741,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,M18,medium,0,0,1,0,1,0,1,2687,73,0.0,4.865,0.004,4.869,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,M18,medium,0,0,1,0,1,0,1,2687,73,0.0,4.865,0.002,4.867,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,H01,hard,0,0,0,0,1,0,1,2713,205,0.0,18.066,0.001,18.068,1,qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,H01,hard,0,0,0,0,1,0,2,1443,190,0.0,19.347,0.002,19.349,2,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,H01,hard,0,0,0,0,3,0,3,8886,615,0.0,53.5,0.002,53.502,3,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S4,H01,hard,0,0,0,0,6,1,6,17772,1230,0.0,107.0,0.001,107.001,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S1,H02,hard,0,0,0,0,1,0,1,2703,204,0.0,14.682,0.003,14.685,0,qwen2.5-coder:3b,"AmbiguousColumn: column reference ""region_id"" is ambiguous"
+ollama_qwen2.5-coder-3b,ollama,S2,H02,hard,0,0,1,0,1,0,2,1060,157,0.0,10.218,0.004,10.222,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,H02,hard,0,0,0,0,3,0,3,8837,568,0.0,39.804,0.001,39.806,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,"AmbiguousColumn: column reference ""region_id"" is ambiguous"
+ollama_qwen2.5-coder-3b,ollama,S4,H02,hard,0,0,0,0,6,1,6,17674,1136,0.0,79.609,0.001,79.61,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,"AmbiguousColumn: column reference ""region_id"" is ambiguous"
+ollama_qwen2.5-coder-3b,ollama,S1,H03,hard,0,0,1,0,1,0,1,2700,131,0.0,9.651,0.006,9.657,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,H03,hard,0,0,1,0,1,0,2,1054,174,0.0,9.117,0.003,9.12,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,H03,hard,0,0,1,0,1,0,1,2700,131,0.0,9.651,0.004,9.655,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,H03,hard,0,0,1,0,1,0,1,2700,131,0.0,9.651,0.003,9.654,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,H04,hard,0,0,1,0,1,0,1,2719,145,0.0,9.493,0.003,9.496,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,H04,hard,0,0,1,0,1,0,2,1174,156,0.0,11.039,0.003,11.042,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,H04,hard,0,0,1,0,1,0,1,2719,145,0.0,9.493,0.003,9.495,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,H04,hard,0,0,1,0,1,0,1,2719,145,0.0,9.493,0.001,9.494,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,H05,hard,0,0,0,0,1,0,1,2715,195,0.0,12.506,0.001,12.507,0,qwen2.5-coder:3b,UndefinedColumn: column sr.field_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,H05,hard,0,0,1,0,1,0,2,1446,262,0.0,16.245,0.443,16.688,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,H05,hard,0,0,0,0,3,0,3,8862,585,0.0,38.851,0.001,38.853,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column sr.field_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S4,H05,hard,0,0,0,0,6,1,6,17724,1170,0.0,77.703,0.001,77.703,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column sr.field_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S1,H06,hard,0,0,0,0,1,0,1,2715,282,0.0,18.422,0.001,18.424,0,qwen2.5-coder:3b,UndefinedColumn: column f.crop does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,H06,hard,0,0,0,0,1,0,2,1345,404,0.0,25.126,0.002,25.128,0,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,H06,hard,0,0,1,0,2,0,2,5755,564,0.0,35.202,0.003,35.205,1,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,H06,hard,0,0,1,0,2,0,2,5755,564,0.0,35.202,0.002,35.204,2,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,H07,hard,0,0,1,0,1,0,1,2697,137,0.0,9.294,0.008,9.303,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,H07,hard,0,0,1,0,1,0,2,1184,173,0.0,11.1,0.004,11.105,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,H07,hard,0,0,1,0,1,0,1,2697,137,0.0,9.294,0.004,9.298,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,H07,hard,0,0,1,0,1,0,1,2697,137,0.0,9.294,0.003,9.297,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,H08,hard,0,0,0,0,1,0,1,2704,146,0.0,10.591,0.002,10.592,0,qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,H08,hard,0,0,0,0,1,0,2,2161,240,0.0,23.708,0.002,23.71,0,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column a.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,H08,hard,0,0,0,0,3,0,3,8682,438,0.0,29.386,0.001,29.387,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S4,H08,hard,0,0,0,0,6,1,6,17364,876,0.0,58.772,0.001,58.772,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S1,H09,hard,0,0,0,0,1,0,1,2692,105,0.0,6.198,0.001,6.199,0,qwen2.5-coder:3b,UndefinedColumn: column a.field_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,H09,hard,0,0,1,0,1,0,2,1333,150,0.0,10.428,0.021,10.449,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,H09,hard,0,0,0,0,3,0,3,8523,314,0.0,18.98,0.001,18.982,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column a.field_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S4,H09,hard,0,0,0,0,6,1,6,17046,628,0.0,37.961,0.001,37.962,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column a.field_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S1,H10,hard,0,0,1,0,1,0,1,2707,123,0.0,7.325,0.003,7.328,0,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S2,H10,hard,0,0,1,0,1,0,2,1308,190,0.0,12.606,0.002,12.609,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,H10,hard,0,0,1,0,1,0,1,2707,123,0.0,7.325,0.002,7.327,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,H10,hard,0,0,1,0,1,0,1,2707,123,0.0,7.325,0.002,7.326,1,qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S1,H11,hard,0,0,0,0,1,0,1,2709,127,0.0,7.642,0.002,7.644,0,qwen2.5-coder:3b,"InvalidDatetimeFormat: invalid input syntax for type interval: ""2025-01-01"""
+ollama_qwen2.5-coder-3b,ollama,S2,H11,hard,0,0,1,1,1,0,2,1489,211,0.0,13.092,0.11,13.202,0,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S3,H11,hard,0,0,0,0,3,0,3,8676,381,0.0,24.287,0.002,24.289,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,"InvalidDatetimeFormat: invalid input syntax for type interval: ""2025-01-01"""
+ollama_qwen2.5-coder-3b,ollama,S4,H11,hard,0,0,0,0,6,1,6,17352,762,0.0,48.574,0.001,48.575,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,"InvalidDatetimeFormat: invalid input syntax for type interval: ""2025-01-01"""
+ollama_qwen2.5-coder-3b,ollama,S1,H12,hard,0,0,0,0,1,0,1,2706,148,0.0,8.786,0.001,8.787,0,qwen2.5-coder:3b,"UndefinedColumn: column ""ts2"" does not exist"
+ollama_qwen2.5-coder-3b,ollama,S2,H12,hard,0,0,0,0,1,0,2,1163,225,0.0,14.381,0.002,14.382,0,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column f.farm_name does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,H12,hard,0,0,0,0,3,0,3,8707,456,0.0,27.199,0.186,27.385,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,"DiskFull: could not resize shared memory segment ""/PostgreSQL.1186614264"" to 16777216 bytes: No space left on device"
+ollama_qwen2.5-coder-3b,ollama,S4,H12,hard,0,0,0,0,6,1,6,17414,912,0.0,54.397,0.111,54.508,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,"DiskFull: could not resize shared memory segment ""/PostgreSQL.3529607392"" to 16777216 bytes: No space left on device"
+ollama_qwen2.5-coder-3b,ollama,S1,H13,hard,0,0,0,0,1,0,1,2711,126,0.0,7.586,0.001,7.587,0,qwen2.5-coder:3b,UndefinedColumn: column fields.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S2,H13,hard,0,0,0,0,1,0,2,2339,318,0.0,25.75,0.001,25.751,0,qwen2.5-coder:3b+qwen2.5-coder:3b,"UndefinedTable: missing FROM-clause entry for table ""farms"""
+ollama_qwen2.5-coder-3b,ollama,S3,H13,hard,0,0,0,0,3,0,3,8643,378,0.0,22.723,0.001,22.724,1,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column fields.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S4,H13,hard,0,0,0,0,6,1,6,17286,756,0.0,45.446,0.001,45.446,6,qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column fields.region_id does not exist
+ollama_qwen2.5-coder-3b,ollama,S1,H14,hard,0,0,0,0,1,0,1,2711,128,0.0,7.715,0.02,7.735,0,qwen2.5-coder:3b,GroupingError: aggregate function calls cannot contain window function calls
+ollama_qwen2.5-coder-3b,ollama,S2,H14,hard,0,0,0,0,1,0,2,1001,129,0.0,8.985,0.001,8.986,0,qwen2.5-coder:3b+qwen2.5-coder:3b,UndefinedColumn: column h.crop does not exist
+ollama_qwen2.5-coder-3b,ollama,S3,H14,hard,0,0,1,0,2,0,2,5596,252,0.0,15.478,0.071,15.549,1,qwen2.5-coder:3b+qwen2.5-coder:3b,
+ollama_qwen2.5-coder-3b,ollama,S4,H14,hard,0,0,1,0,2,0,2,5596,252,0.0,15.478,0.078,15.556,2,qwen2.5-coder:3b+qwen2.5-coder:3b,
