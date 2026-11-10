@@ -57,7 +57,7 @@ def render_markdown(questions, results) -> str:
             q.gold_sql,
             "```",
             "",
-            f"Result: {len(res.rows)} row(s), {res.elapsed_s * 1000:.0f} ms"
+            f"Result: {len(res.rows)} row(s)"
             + (" — order matters" if q.order_matters else ""),
             "",
             "| " + " | ".join(res.columns) + " |",
