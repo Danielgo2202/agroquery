@@ -14,9 +14,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-import psycopg
-
 from agroquery.config import DATABASE_URL
+from agroquery.db import connect
 
 SAMPLE_ROWS = 3
 MAX_LISTED_VALUES = 12
@@ -80,7 +79,7 @@ WHERE n.nspname = 'public' AND con.contype IN ('p', 'f')
 
 def introspect(url: str = DATABASE_URL) -> SchemaInfo:
     tables: dict[str, Table] = {}
-    with psycopg.connect(url) as conn, conn.cursor() as cur:
+    with connect(url) as conn, conn.cursor() as cur:
         cur.execute(_INTROSPECT_COLUMNS)
         for tname, cname, ctype, ccomment, tcomment in cur.fetchall():
             t = tables.setdefault(tname, Table(tname, tcomment))

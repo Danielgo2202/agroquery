@@ -18,7 +18,7 @@ FROM farms f JOIN regions r USING (region_id)
 GROUP BY r.name
 ```
 
-Result: 5 row(s), 36 ms
+Result: 5 row(s), 26 ms
 
 | name | n_farms |
 |---|---|
@@ -36,7 +36,7 @@ What is the total planted area, in hectares, of all rice fields?
 SELECT sum(area_ha) AS total_area_ha FROM fields WHERE crop = 'rice'
 ```
 
-Result: 1 row(s), 1 ms
+Result: 1 row(s), 4 ms
 
 | total_area_ha |
 |---|
@@ -72,7 +72,7 @@ FROM weather_daily w JOIN regions r USING (region_id)
 WHERE r.name = 'Llanos del Meta' AND w.date >= '2024-01-01' AND w.date < '2025-01-01'
 ```
 
-Result: 1 row(s), 1 ms
+Result: 1 row(s), 6 ms
 
 | total_rain_mm |
 |---|
@@ -89,7 +89,7 @@ WHERE r.name = 'Norte del Huila'
   AND w.temp_max_c = (SELECT max(w2.temp_max_c) FROM weather_daily w2 WHERE w2.region_id = w.region_id)
 ```
 
-Result: 2 row(s), 160 ms
+Result: 2 row(s), 454 ms
 
 | date | temp_max_c |
 |---|---|
@@ -104,7 +104,7 @@ How many fields have an irrigation system?
 SELECT count(*) AS n_irrigated FROM fields WHERE irrigated
 ```
 
-Result: 1 row(s), 1 ms
+Result: 1 row(s), 22 ms
 
 | n_irrigated |
 |---|
@@ -124,7 +124,7 @@ WHERE f.name = 'La Esperanza' AND s.sensor_type = 'soil_moisture'
   AND r.ts >= '2025-03-01' AND r.ts < '2025-04-01'
 ```
 
-Result: 1 row(s), 3 ms
+Result: 1 row(s), 18 ms
 
 | avg_moisture |
 |---|
@@ -139,7 +139,7 @@ SELECT count(*) AS n_critical FROM alerts
 WHERE level = 'critical' AND ts >= '2024-01-01' AND ts < '2025-01-01'
 ```
 
-Result: 1 row(s), 1 ms
+Result: 1 row(s), 7 ms
 
 | n_critical |
 |---|
@@ -189,7 +189,7 @@ FROM harvests h JOIN fields fl USING (field_id)
 WHERE fl.crop = 'coffee' AND h.harvest_date >= '2024-01-01' AND h.harvest_date < '2025-01-01'
 ```
 
-Result: 1 row(s), 1 ms
+Result: 1 row(s), 3 ms
 
 | coffee_kg |
 |---|
@@ -221,7 +221,7 @@ WHERE w.precipitation_mm >= 1 AND w.date >= '2023-01-01' AND w.date < '2024-01-0
 GROUP BY r.name
 ```
 
-Result: 5 row(s), 3 ms
+Result: 5 row(s), 4 ms
 
 | name | rainy_days |
 |---|---|
@@ -335,7 +335,7 @@ ORDER BY n_alerts DESC
 LIMIT 5
 ```
 
-Result: 5 row(s), 4 ms — order matters
+Result: 5 row(s), 9 ms — order matters
 
 | farm | field | n_alerts |
 |---|---|---|
@@ -355,7 +355,7 @@ FROM harvests h JOIN fields fl USING (field_id)
 GROUP BY fl.crop
 ```
 
-Result: 8 row(s), 1 ms
+Result: 8 row(s), 2 ms
 
 | crop | avg_yield_kg_ha |
 |---|---|
@@ -418,7 +418,7 @@ WHERE s.sensor_type = 'ph'
 GROUP BY r.name
 ```
 
-Result: 5 row(s), 180 ms
+Result: 5 row(s), 535 ms
 
 | name | avg_ph |
 |---|---|
@@ -443,7 +443,7 @@ WHERE a.alert_type = 'high_soil_temp' AND a.ts >= '2024-01-01' AND a.ts < '2025-
 GROUP BY r.name
 ```
 
-Result: 3 row(s), 3 ms
+Result: 3 row(s), 2 ms
 
 | name | n_alerts |
 |---|---|
@@ -463,7 +463,7 @@ GROUP BY month
 ORDER BY month
 ```
 
-Result: 12 row(s), 1 ms — order matters
+Result: 12 row(s), 3 ms — order matters
 
 | month | rain_mm |
 |---|---|
@@ -488,7 +488,7 @@ WHERE f.name = 'Las Palmas' AND r.ts >= '2024-01-01' AND r.ts < '2025-01-01'
 GROUP BY s.sensor_id, s.sensor_type
 ```
 
-Result: 10 row(s), 9 ms
+Result: 10 row(s), 18 ms
 
 | sensor_id | sensor_type | n_readings |
 |---|---|---|
@@ -512,7 +512,7 @@ JOIN regions r USING (region_id)
 GROUP BY r.name
 ```
 
-Result: 5 row(s), 3 ms
+Result: 5 row(s), 6 ms
 
 | name | pct_grade_a |
 |---|---|
@@ -538,7 +538,7 @@ WHERE rg.name = 'Norte del Huila' AND s.sensor_type = 'soil_moisture'
 GROUP BY fl.irrigated
 ```
 
-Result: 2 row(s), 34 ms
+Result: 2 row(s), 64 ms
 
 | irrigated | avg_moisture |
 |---|---|
@@ -556,7 +556,7 @@ GROUP BY f.name
 HAVING bool_or(fl.crop = 'rice') AND bool_or(fl.crop = 'maize')
 ```
 
-Result: 8 row(s), 2 ms
+Result: 8 row(s), 3 ms
 
 | name |
 |---|
@@ -580,7 +580,7 @@ ORDER BY n_harvests DESC
 LIMIT 1
 ```
 
-Result: 1 row(s), 1 ms
+Result: 1 row(s), 2 ms
 
 | crop | n_harvests |
 |---|---|
@@ -625,7 +625,7 @@ WHERE w.date >= '2024-01-01' AND w.date < '2025-01-01'
 GROUP BY r.name
 ```
 
-Result: 5 row(s), 2 ms
+Result: 5 row(s), 3 ms
 
 | name | avg_temp_c |
 |---|---|
@@ -650,7 +650,7 @@ GROUP BY f.name, fl.name
 HAVING avg(r.value) < 5.0
 ```
 
-Result: 2 row(s), 110 ms
+Result: 2 row(s), 140 ms
 
 | farm | field | avg_ph |
 |---|---|---|
@@ -691,7 +691,7 @@ ORDER BY avg_yield_kg_ha DESC
 LIMIT 3
 ```
 
-Result: 3 row(s), 2 ms — order matters
+Result: 3 row(s), 1 ms — order matters
 
 | name | avg_yield_kg_ha |
 |---|---|
@@ -714,7 +714,7 @@ WHERE s.sensor_type = 'soil_temp' AND r.ts >= '2024-01-01' AND r.ts < '2025-01-0
 GROUP BY rg.name
 ```
 
-Result: 5 row(s), 214 ms
+Result: 5 row(s), 220 ms
 
 | name | max_soil_temp_c |
 |---|---|
@@ -745,7 +745,7 @@ FROM h JOIN rain USING (harvest_id)
 GROUP BY h.crop
 ```
 
-Result: 8 row(s), 76 ms
+Result: 8 row(s), 94 ms
 
 | crop | correlation |
 |---|---|
@@ -772,7 +772,7 @@ FROM (SELECT name, grp, count(*) AS run_days FROM dry GROUP BY name, grp) runs
 GROUP BY name
 ```
 
-Result: 5 row(s), 2 ms
+Result: 5 row(s), 21 ms
 
 | name | longest_dry_run |
 |---|---|
@@ -849,7 +849,7 @@ GROUP BY f.name, fl.name, fl.crop
 HAVING avg((r.value < c.moisture_min_pct)::int) > 0.3
 ```
 
-Result: 15 row(s), 216 ms
+Result: 15 row(s), 235 ms
 
 | farm | field | crop | pct_below |
 |---|---|---|---|
@@ -906,7 +906,7 @@ WHERE gap_days IS NOT NULL
 GROUP BY farm, field
 ```
 
-Result: 10 row(s), 1 ms
+Result: 10 row(s), 21 ms
 
 | farm | field | avg_interval_days |
 |---|---|---|
@@ -1016,7 +1016,7 @@ WHERE h.harvest_date >= '2025-01-01' AND h.harvest_date < '2026-01-01'
 GROUP BY h.quality_grade
 ```
 
-Result: 3 row(s), 293 ms
+Result: 3 row(s), 280 ms
 
 | quality_grade | avg_moisture_30d |
 |---|---|
@@ -1044,7 +1044,7 @@ GROUP BY g.sensor_id, f.name
 HAVING max(g.gap) > interval '7 days'
 ```
 
-Result: 64 row(s), 1317 ms
+Result: 64 row(s), 2476 ms
 
 | sensor_id | farm | longest_gap_hours |
 |---|---|---|
@@ -1075,7 +1075,7 @@ FROM m
 ORDER BY month
 ```
 
-Result: 10 row(s), 1 ms — order matters
+Result: 10 row(s), 2 ms — order matters
 
 | month | cumulative_kg |
 |---|---|
@@ -1101,7 +1101,7 @@ FROM (SELECT h.*, avg(yield_kg_ha) OVER (PARTITION BY crop) AS avg_crop FROM h) 
 GROUP BY crop
 ```
 
-Result: 8 row(s), 1 ms
+Result: 8 row(s), 3 ms
 
 | crop | pct_low |
 |---|---|

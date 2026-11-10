@@ -74,6 +74,16 @@ def default_provider() -> str:
 
 
 def main(argv: list[str] | None = None) -> int:
+    from agroquery.db import DatabaseUnavailable
+
+    try:
+        return _main(argv)
+    except DatabaseUnavailable as exc:
+        print(f"ERROR: {exc}", file=sys.stderr)
+        return 1
+
+
+def _main(argv: list[str] | None = None) -> int:
     argv = sys.argv[1:] if argv is None else argv
     if not argv or argv[0] in ("-h", "--help"):
         print(__doc__)

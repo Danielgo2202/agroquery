@@ -10,6 +10,7 @@ import psycopg
 
 from agroquery.config import DATABASE_URL, ROOT, SCHEMA_SQL
 from agroquery.data.generate_farms import generate
+from agroquery.db import connect
 
 LOAD_ORDER = [
     "regions", "crops", "weather_daily", "farms", "fields",
@@ -31,7 +32,7 @@ def main() -> None:
     t0 = time.perf_counter()
     tables = generate()
     print(f"[load] generated data in {time.perf_counter() - t0:.1f}s")
-    with psycopg.connect(DATABASE_URL, autocommit=True) as conn, conn.cursor() as cur:
+    with connect(DATABASE_URL, autocommit=True) as conn, conn.cursor() as cur:
         cur.execute(SCHEMA_SQL.read_text(encoding="utf-8"))
         for name in LOAD_ORDER:
             t1 = time.perf_counter()

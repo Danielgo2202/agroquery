@@ -13,6 +13,7 @@ from dataclasses import dataclass, field
 import psycopg
 
 from agroquery.config import READONLY_DATABASE_URL
+from agroquery.db import connect
 
 MAX_ROWS = 10_000
 
@@ -42,14 +43,15 @@ class SQLExecutor:
 
     def _connection(self) -> psycopg.Connection:
         if self._conn is None or self._conn.closed:
-            self._conn = psycopg.connect(self.url, autocommit=True)
+            self._conn = connect(self.url, autocommit=True)
             self._conn.execute(f"SET statement_timeout = '{self.timeout_s}s'")
         return self._conn
 
     def run(self, sql: str) -> ExecResult:
+        conn = self._connection()  # raises DatabaseUnavailable; never scored as a model error
         t0 = time.perf_counter()
         try:
-            with self._connection().cursor() as cur:
+            with conn.cursor() as cur:
                 cur.execute(sql)
                 if cur.description is None:
                     return ExecResult(error="Statement returned no result set.",

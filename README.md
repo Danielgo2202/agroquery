@@ -8,6 +8,8 @@ accuracy, tokens, cost and latency**. It is a small, fully reproducible experime
 rather than a chatbot: a purpose-built database, a 50-question benchmark with gold
 SQL, and one command that regenerates every number in this README.
 
+*[Resumen en español al final](#resumen-en-español).*
+
 ## Motivation
 
 I work as an engineer at a precision-agriculture startup, where field data (soil
@@ -91,7 +93,7 @@ All 50 questions x 4 strategies, one sample each
 ([`results/ollama_qwen2.5-coder-3b`](results/ollama_qwen2.5-coder-3b)). This run uses
 the same model as "small" and "large", so it tests the strategies' mechanics; the
 small-vs-large comparison that S4 is designed for needs a second, stronger model
-(see *Next run* below).
+(see *Future work*).
 
 | Strategy | Accuracy (95% CI) | Easy | Medium | Hard | Avg input tokens | Avg output tokens | Queries that failed to run |
 |---|---|---|---|---|---:|---:|---:|
@@ -117,15 +119,23 @@ small-vs-large comparison that S4 is designed for needs a second, stronger model
   often repeats the same query despite the error message.
 - **Escalating to an equally weak model is pure cost.** S4 escalated on 15
   questions and recovered none, adding 55% more tokens than S3. Routing only pays
-  off when the escalation target is stronger, which is the next experiment.
+  off when the escalation target is stronger.
 - **Many failures are hallucinated schema elements** (for example `alerts.field_id`
   or `fields.region_id`): 28-36% of queries did not run at all.
 
-### Next run: small vs. large hosted models
+### Future work
 
-The pipeline also supports the Anthropic API (Claude Haiku 5.5 / Sonnet 5.5) and any
-OpenAI-compatible API, such as a free tier (`--provider compat`, configured in
-`.env`). Results for a small/large model pair will be added here.
+- **A small/large pair of hosted models.** The pipeline already supports the
+  Anthropic API (Claude Haiku 5.5 as the small model, Claude Sonnet 5.5 as the large
+  one) and any OpenAI-compatible API (`--provider compat`). Running it is the
+  natural next step to test whether routing (S4) cuts cost when the escalation
+  target is stronger.
+- **Repeated samples** (`--repeat 3`) to separate strategy effects from sampling
+  noise.
+- **Prompt caching of the schema**, a cost lever orthogonal to the four strategies.
+- **Specialized code for heavy queries:** have an agent generate query-specific
+  Python/DuckDB code for the slowest analytical questions and compare its run time
+  against PostgreSQL.
 
 ## Limitations
 
@@ -140,8 +150,9 @@ OpenAI-compatible API, such as a free tier (`--provider compat`, configured in
 - **The escalation signal is weak by design.** S4 escalates only when a query fails
   or returns nothing; it cannot detect a query that runs and is wrong, because gold
   answers are not available at inference time.
-- **Point-in-time results.** Results depend on the specific models and their
-  prices at the time of the experiment (November 2026).
+- **One small local model.** The reported results come from a 3B-parameter model
+  running on CPU; stronger models will shift every number, and the ranking of
+  strategies may change with them.
 - Token counts for the local model are as reported by Ollama.
 
 ## Reproduce
@@ -151,9 +162,10 @@ and one model backend: [Ollama](https://ollama.com) (free, local), an Anthropic 
 key, or a key for any OpenAI-compatible API.
 
 ```bash
-cp .env.example .env            # add ANTHROPIC_API_KEY (optional) and MAX_USD
+cp .env.example .env            # optional: API keys and MAX_USD
 uv sync
 uv run agroquery all            # Postgres -> data -> validate -> eval -> analyze
+                                # (uses Ollama when no API key is set)
 ```
 
 Or step by step:
@@ -189,5 +201,50 @@ tests/
 
 ## Built with
 
-Python, PostgreSQL, the Anthropic Claude API and Ollama. Developed with
-[Claude Code](https://claude.com/claude-code).
+Python, PostgreSQL, Docker and Ollama, with optional backends for the Anthropic API
+and OpenAI-compatible APIs. Developed with [Claude Code](https://claude.com/claude-code).
+
+## Resumen en español
+
+**AgroQuery** es un agente basado en modelos de lenguaje (LLM) que responde preguntas
+en lenguaje natural sobre datos agrícolas guardados en PostgreSQL: convierte la
+pregunta en una consulta SQL, la ejecuta y devuelve el resultado. El objetivo no es
+solo construir el agente, sino **medir** cuánto cuesta cada forma de hacerlo:
+¿cuánto se puede reducir el costo en tokens sin perder precisión?
+
+**Datos.** El clima es real (API histórica de Open-Meteo, 2023-2025) para cinco
+zonas agrícolas de Colombia: Eje Cafetero, Meta, Tolima, Huila y Valle del Cauca.
+Sobre ese clima se simulan 40 fincas, 116 lotes, 299 sensores de suelo (humedad,
+temperatura y pH), unos 3 millones de lecturas, alertas y cosechas. La humedad del
+suelo sigue un balance hídrico hora a hora con la lluvia y la evapotranspiración
+reales, y el rendimiento de cada cosecha depende del estrés hídrico que sufrió el
+lote. Como los datos de las fincas son generados, ningún modelo pudo haber
+memorizado las respuestas.
+
+**Benchmark.** 50 preguntas (18 fáciles, 18 medias y 14 difíciles), cada una con su
+SQL de referencia. Una respuesta es correcta si el **resultado** de su consulta
+coincide con el de la referencia (*execution accuracy*); no se compara el texto
+del SQL.
+
+**Estrategias comparadas.**
+- **S1, línea base:** el esquema completo en el prompt y una sola llamada.
+- **S2, esquema compacto:** un modelo pequeño elige primero las tablas y columnas
+  relevantes, y solo esas se envían.
+- **S3, autocorrección:** se ejecuta el SQL; si falla o no devuelve filas, se
+  reintenta con el error (máximo 3 intentos).
+- **S4, enrutamiento:** se intenta con un modelo pequeño y se escala al grande solo
+  si falla.
+
+**Resultados con un modelo local** (`qwen2.5-coder:3b` en CPU, costo $0):
+
+- La precisión fue de 36-48 % según la estrategia: alrededor de 80 % en las
+  preguntas fáciles y 0 % en las difíciles.
+- El esquema compacto (S2) redujo los tokens de entrada a menos de la mitad, pero
+  perdió 8 puntos de precisión.
+- La autocorrección (S3) solo arregló 2 de 19 consultas con error.
+- Escalar a un modelo igual de débil (S4) no recuperó ninguna pregunta y solo
+  aumentó el costo.
+- El sistema también funciona con la API de Claude y con cualquier API compatible
+  con OpenAI, para comparar un par de modelos pequeño/grande en el futuro.
+
+Todo se reproduce con `uv run agroquery all` (requiere Docker, uv y Ollama).
