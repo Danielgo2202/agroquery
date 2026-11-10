@@ -72,11 +72,11 @@ See [`agroquery/eval/compare.py`](agroquery/eval/compare.py).
 | S3 | Self-correcting | S1, then execute; on an error or an empty result, retry with that feedback (at most 3 attempts) |
 | S4 | Model routing | S3 with the small model; escalate to S3 with the large model only if the small model never produced a query that runs and returns rows |
 
-Models: **Claude Haiku 5.5** (small, $0.10 / $0.50 per million input / output
-tokens) and **Claude Sonnet 5.5** (large, $2 / $10). Extended thinking is off, so
-strategies are compared on the tokens they need to write SQL. A local model
-(`qwen2.5-coder:3b` via [Ollama](https://ollama.com)) runs the same pipeline for
-free during development.
+Three backends run the same pipeline: a local model through
+[Ollama](https://ollama.com) (`qwen2.5-coder:3b`, free), the Anthropic API
+(Claude Haiku 5.5 as the small model at $0.10 / $0.50 per million input / output
+tokens, Claude Sonnet 5.5 as the large one at $2 / $10, extended thinking off), and
+any OpenAI-compatible API (for example a free tier such as Groq or OpenRouter).
 
 For each question and strategy, AgroQuery records correctness, input and output
 tokens over every call, cost in USD, LLM latency and SQL latency, the number of
@@ -85,11 +85,47 @@ are written next to the results.
 
 ## Results
 
-> Results will be filled in from the final run.
+### Local baseline: `qwen2.5-coder:3b` (Ollama, CPU, $0)
 
-![Accuracy vs cost](figures/accuracy_vs_cost.png)
+All 50 questions x 4 strategies, one sample each
+([`results/ollama_qwen2.5-coder-3b`](results/ollama_qwen2.5-coder-3b)). This run uses
+the same model as "small" and "large", so it tests the strategies' mechanics; the
+small-vs-large comparison that S4 is designed for needs a second, stronger model
+(see *Next run* below).
+
+| Strategy | Accuracy (95% CI) | Easy | Medium | Hard | Avg input tokens | Avg output tokens | Queries that failed to run |
+|---|---|---|---|---|---:|---:|---:|
+| S1 Baseline | 44% (31-58%) | 78% | 44% | 0% | 2,693 | 97 | 36% |
+| S2 Compact schema | 36% (24-50%) | 67% | 33% | 0% | 1,260 | 152 | 30% |
+| S3 Self-correcting | 48% (35-61%) | 83% | 50% | 0% | 4,704 | 186 | 28% |
+| S4 Model routing | 48% (35-61%) | 83% | 50% | 0% | 7,294 | 304 | 28% |
+
+![Accuracy vs tokens](figures/accuracy_vs_cost.png)
 
 ![Tokens by difficulty](figures/tokens_by_difficulty.png)
+
+**Findings**
+
+- **The benchmark separates difficulty levels sharply.** The 3B model answers 78-83%
+  of easy questions and none of the 14 hard ones (temporal windows, gaps-and-islands,
+  window functions), whatever the strategy.
+- **Schema pruning (S2) halves input tokens (-53%) but costs accuracy (-8 points).**
+  The selection step sometimes drops a table or column the query needs: S2 lost 5
+  questions that S1 answered and won 1.
+- **Self-correction (S3) helps little with a weak model.** S3 retried on 19
+  questions and fixed only 2 (+4 points), at 75% more input tokens: the model
+  often repeats the same query despite the error message.
+- **Escalating to an equally weak model is pure cost.** S4 escalated on 15
+  questions and recovered none, adding 55% more tokens than S3. Routing only pays
+  off when the escalation target is stronger, which is the next experiment.
+- **Many failures are hallucinated schema elements** (for example `alerts.field_id`
+  or `fields.region_id`): 28-36% of queries did not run at all.
+
+### Next run: small vs. large hosted models
+
+The pipeline also supports the Anthropic API (Claude Haiku 5.5 / Sonnet 5.5) and any
+OpenAI-compatible API, such as a free tier (`--provider compat`, configured in
+`.env`). Results for a small/large model pair will be added here.
 
 ## Limitations
 
@@ -111,7 +147,8 @@ are written next to the results.
 ## Reproduce
 
 Requirements: [Docker](https://www.docker.com/), [uv](https://docs.astral.sh/uv/),
-and either an Anthropic API key or [Ollama](https://ollama.com).
+and one model backend: [Ollama](https://ollama.com) (free, local), an Anthropic API
+key, or a key for any OpenAI-compatible API.
 
 ```bash
 cp .env.example .env            # add ANTHROPIC_API_KEY (optional) and MAX_USD
@@ -125,7 +162,7 @@ Or step by step:
 uv run agroquery up             # PostgreSQL 16 in Docker (port 5433)
 uv run agroquery data           # download weather, generate and load (~1 min)
 uv run agroquery validate       # check the 50 gold queries
-uv run agroquery eval --provider anthropic --repeat 3
+uv run agroquery eval --provider ollama   # or anthropic / compat
 uv run agroquery analyze        # results table + figures
 uv run agroquery ask "Which 5 fields had the most low-moisture alerts in the dry season?"
 ```
