@@ -21,13 +21,22 @@ from agroquery.agent.pricing import PRICES_AS_OF
 from agroquery.agent.schema import introspect
 from agroquery.agent.sql_exec import SQLExecutor
 from agroquery.agent.strategies import STRATEGIES, Agent
-from agroquery.config import MAX_USD, RESULTS_DIR, ROOT
+from agroquery.config import (
+    COMPAT_LARGE_MODEL,
+    COMPAT_NAME,
+    COMPAT_SMALL_MODEL,
+    MAX_USD,
+    RESULTS_DIR,
+    ROOT,
+)
 from agroquery.eval.benchmark import load_questions
 from agroquery.eval.compare import results_match
 
 PRESETS = {
     "anthropic": ("claude-haiku-5-5", "claude-sonnet-5-5"),
     "ollama": ("qwen2.5-coder:3b", "qwen2.5-coder:3b"),
+    # OpenAI-compatible API configured in .env (COMPAT_*), e.g. a free tier.
+    "compat": (COMPAT_SMALL_MODEL, COMPAT_LARGE_MODEL),
 }
 
 FIELDS = [
@@ -67,6 +76,9 @@ def main(argv=None) -> int:
     small_id, large_id = PRESETS[args.provider]
     small = ModelSpec(args.provider, args.small or small_id)
     large = ModelSpec(args.provider, args.large or large_id)
+    if not small.model or not large.model:
+        raise SystemExit("set COMPAT_SMALL_MODEL and COMPAT_LARGE_MODEL in .env "
+                         "(see `agroquery models`)")
     strategies = [s.strip().upper() for s in args.strategies.split(",")]
     unknown = set(strategies) - set(STRATEGIES)
     if unknown:
@@ -79,7 +91,8 @@ def main(argv=None) -> int:
     if args.limit:
         questions = questions[: args.limit]
 
-    run = args.run or f"{args.provider}_{datetime.now():%Y%m%d-%H%M}"
+    label = COMPAT_NAME if args.provider == "compat" else args.provider
+    run = args.run or f"{label}_{datetime.now():%Y%m%d-%H%M}"
     out_dir = RESULTS_DIR / run
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -92,7 +105,7 @@ def main(argv=None) -> int:
         raise SystemExit(f"gold queries failing, run `agroquery validate`: {bad_gold}")
 
     meta = {
-        "run": run, "provider": args.provider, "small_model": small.model,
+        "run": run, "provider": label, "small_model": small.model,
         "large_model": large.model, "strategies": strategies, "n_questions": len(questions),
         "repeat": args.repeat, "prices_as_of": PRICES_AS_OF, "git_commit": git_commit(),
         "started_at": datetime.now().isoformat(timespec="seconds"),

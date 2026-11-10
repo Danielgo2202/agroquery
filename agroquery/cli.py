@@ -6,6 +6,7 @@
     agroquery eval [options]         run the benchmark (see `agroquery eval -h`)
     agroquery analyze [--run NAME]   results table + figures
     agroquery ask "question" [-s S3] answer one question
+    agroquery models                 list models of the OpenAI-compatible API in .env
     agroquery all [eval options]     everything above, in order
 """
 
@@ -65,7 +66,11 @@ def cmd_ask(argv: list[str]) -> int:
 
 
 def default_provider() -> str:
-    return "anthropic" if os.getenv("ANTHROPIC_API_KEY") else "ollama"
+    if os.getenv("ANTHROPIC_API_KEY"):
+        return "anthropic"
+    if os.getenv("COMPAT_API_KEY"):
+        return "compat"
+    return "ollama"
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -95,6 +100,12 @@ def main(argv: list[str] | None = None) -> int:
         return analyze.main(rest)
     if cmd == "ask":
         return cmd_ask(rest)
+    if cmd == "models":
+        from agroquery.agent.llm import LLMClient
+
+        for model_id in LLMClient().list_compat_models():
+            print(model_id)
+        return 0
     if cmd == "all":
         for step in (cmd_up, cmd_data):
             if step() != 0:

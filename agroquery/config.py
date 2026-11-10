@@ -25,6 +25,15 @@ READONLY_DATABASE_URL = os.getenv(
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 MAX_USD = float(os.getenv("MAX_USD", "5"))
 
+# Any OpenAI-compatible chat API (Groq, OpenRouter, Gemini, Cerebras, ...).
+COMPAT_NAME = os.getenv("COMPAT_NAME", "groq")
+COMPAT_BASE_URL = os.getenv("COMPAT_BASE_URL", "https://api.groq.com/openai/v1")
+COMPAT_API_KEY = os.getenv("COMPAT_API_KEY", "")
+COMPAT_SMALL_MODEL = os.getenv("COMPAT_SMALL_MODEL", "")
+COMPAT_LARGE_MODEL = os.getenv("COMPAT_LARGE_MODEL", "")
+# Pause between requests to stay under free-tier requests-per-minute limits.
+COMPAT_MIN_INTERVAL_S = float(os.getenv("COMPAT_MIN_INTERVAL_S", "2.5"))
+
 START_DATE = "2023-01-01"
 END_DATE = "2025-12-31"
 TIMEZONE = "America/Bogota"
